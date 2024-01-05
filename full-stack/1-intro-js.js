@@ -24,9 +24,10 @@ const hasHobbies2 = true;
 
 
 // 1.2: JavaScript Basics Part 1
+// **************************************************
 // Primitive Data Types
+// ***************************************************
 /* Primitive data types, as the name suggests, are the most basic type of data. */
-
 
 // 1 - String
 // A string is a sequence of characters. It can be any length and can contain any letters, numbers, symbols, and spaces.
@@ -100,7 +101,9 @@ let uninitializedValue = undefined;
 // Symbols are a new primitive type in ES6.
 
 
+// **************************************************
 // Complex Data Types
+// ***************************************************
 // Complex data types are made up of primitive data types. They are more complex than primitive data types because they can hold multiple values.
 
 
@@ -217,7 +220,9 @@ console.log(firstNumber); // 0.98
 console.log(numbers1); // [123, 245, 345, 444, 534]
 
 
+// **************************************************
 // Differences Between Primitive & Complex Data Types
+// ***************************************************
     // Primitive data types are passed by value. Complex data types are passed by reference: refers to how values are handled when they are passed as arguments to functions or assigned to variables in programming languages.
 
 // 1. Primitive Data Types:
@@ -277,4 +282,40 @@ console.log(result); // Output: 10
     greet("Alice"); // Output: Hello, Alice!
 //So, when we discuss values being "passed as arguments" in JavaScript, we are highlighting the idea of supplying data to a function for it to operate on or utilize in its logic.
 
+// Example - 3 Primitive Data Types
+let a = 1;
+// The following lines implies: copy the current value of `a`, then assign it to `b`
+let b = a;
+console.log(a); // 1
+console.log(b); // 1
 
+a = 2;
+console.log(a); // 2
+console.log(b); // still 1 since this what has been copied eariler
+
+b = a;
+console.log(a); // 2
+console.log(b); // 2
+// This is how variables work for primitive data types, including numbers, strings, booleans, null, and undefined.
+
+// But for complex data types (objects, arrays, and functions) variables work a bit differently. Rather than simply copying the current object/array/function being referred to by the original variable, both variables will be referring to the same original object/array/function. 
+
+// This means if you were to make a change to the object through one of the variables, you will be able to observe the same new change though the other variable. 
+
+// Example 4 - Complex Data Types
+let car1 = {
+    model: 2019,
+    color: "red"
+  };
+  
+  // The next code line implies: tell “car2” to refer to what “car1” is referring to
+  let car2 = car1;
+  
+  console.log(car1); // {model: 2019, color: "red"};
+  console.log(car2); // {model: 2019, color: "red"};
+  
+  // Change the “model” property of the object referred to by “car1”
+  car1.model = 2018;
+  
+  console.log(car1); // {model: 2018, color: "red"}
+  console.log(car2); // {model: 2018, color: "red"} -> Notice that “model” is now also 2018, even though the change was done by way of “car1”
