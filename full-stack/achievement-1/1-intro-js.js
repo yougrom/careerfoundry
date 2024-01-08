@@ -319,3 +319,28 @@ let car1 = {
   
   console.log(car1); // {model: 2018, color: "red"}
   console.log(car2); // {model: 2018, color: "red"} -> Notice that “model” is now also 2018, even though the change was done by way of “car1”
+
+// Notice that the term “refer” is being used here instead of “value.” This is because when you assign primitive data (string, number, etc.) to a variable, the actual value will be held by that variable.
+
+// But when you assign complex data (object, array, function) to a variable, the variable will hold a reference to the original object/array/function.
+
+
+// *****************************
+// Variable Typing in JavaScript
+// *****************************
+let myVariable = 'Hello world!';
+console.log(typeof myVariable); // string
+
+// In contrast to many other programming languages, JavaScript employs what’s called dynamic typing. This means that a variable’s type isn’t fixed and can change at any time. 
+// Example
+let myVariable = 'Hello world!';
+console.log(typeof myVariable); // string
+myVariable = 10;
+console.log(typeof myVariable); // number
+
+// In JavaScript, variables are not bound to a specific data type. This means that a variable can be assigned a value of any type, regardless of its current type.
+    // Dynamic typing has allows you to be very flexible with your code.
+    // On the downside, however, this makes it much easier for bugs to sneak into your code.
+
+
+
