@@ -381,7 +381,7 @@ do
 while (condition);
 
 // the different loops are used for different purposes:
-// Example 1:
+// Example 1: do and while
 let text = '';
 let i = 0;
 do {
@@ -391,3 +391,23 @@ do {
 while (i < 10);
 console.log(text1); // 0 1 2 3 4 5 6 7 8 9
 
+// Example 2: while
+let fruits = ["apple", "banana", "orange", "grape"]
+let text2 = '';
+let item = 0;
+
+while(fruits[item]) {
+  text2 = text2 + ' ' + fruits[item]
+  item++;
+} 
+console.log(text2);
+
+// Example 2: for
+let veggies = ["tomato", "cucumber", "potato"];
+let text3 = "";
+let a = 0;
+for (;veggies[a];){
+  text3 = text3 + " " + veggies[a];
+  a++;
+}
+console.log(text3);
