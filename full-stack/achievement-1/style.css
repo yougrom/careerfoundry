@@ -4,44 +4,15 @@
 }
 
 body {
-    background-color: black;
+    background-color: white;
 }
 
-div {
-    padding: 5px 25px;
-    margin: 5px 0;
-    position: relative;
-    left: -100vw; 
-    color: white;
-    text-align: right; 
-    font-size: 18px; 
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif; 
-    border-top-right-radius: 5px; 
-    border-bottom-right-radius: 5px;
-    animation: 5s ease-in-out enter-left 1 forwards;
+.container-gen, .container {
+    border: 2px blue solid;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
-div:nth-child(1) {
-    background-color: #446996;
-    animation-delay: 0.1s;
-}
-    
-div:nth-child(2) {
-    background-color: #2d4264; 
-    animation-delay: 0.2s;
-}
-
-div:nth-child(3) {
-    background-color: #182033;
-    animation-delay: 0.3s;
-}
-
-div:nth-child(4) {
-    background-color: #1b2826;
-    animation-delay: 0.4s;
-}
-div:nth-child(5) {
-    background-color: #1f3423;
-    animation-delay: 0.5s;
+.selected {
+    border: 5px red solid;
 }
