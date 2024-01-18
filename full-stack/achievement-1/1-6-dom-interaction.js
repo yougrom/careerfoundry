@@ -172,3 +172,141 @@ container.classList.toggle('selected');
 
 // to toggle the class off
 container.classList.toggle('selected');
+
+
+
+//=====================
+// Manipulating the DOM: Forms
+//=====================
+
+
+//=====================
+// Event Handling
+//=====================
+
+// An event is anything that happens on a page. This includes things like clicking a button, scrolling, or pressing a key on the keyboard. Events are handled by event listeners, which are functions that are called when an event occurs. Event listeners are attached to DOM nodes, and they listen for a specific event to occur on that node. When the event occurs, the event listener is called.
+
+//-- HTML --
+<button>Click Me</button>
+
+// -- JAVASCRIPT --
+let button1 = document.querySelector('button');
+
+button1.addEventListener('click', function (event) {
+  console.log(event);
+});
+
+// Whenever the user clicks the selected button, the function passed as the second parameter in addEventListener will be called. This function is called an event handler.
+
+// In short, this function contains the code that you want to execute once the specified event occurs (which is passed as the first parameter; click in this example). An event handler additionally contains a special event object as its parameter. This parameter is optional, meaning that the function will still work even if you don't want to use the event object inside the function body. It does, however, have a few useful properties you can use:
+
+// event.target; // The element that dispatched the event, e.g., button
+// event.type; // The type of the event, e.g., 'click'
+
+// event.target would represent the element that was clicked. With this in your code, event.type would return the type of the event, which would be click in the earlier example.
+
+// Example
+// In the example, the button click will toggle between two colors.
+// HTML --- <div> <button class="button--green">Click me!</button> </div>
+// JS ----------------------
+let button = document.querySelector('button');
+
+button.addEventListener('click', function (event) {
+  let target = event.target;
+  target.classList.toggle('button--red');
+  target.classList.toggle('button--green');
+});
+
+// Exemple 2
+// HTML
+/* <section>
+<div class='article'>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa alias minima officiis inventore voluptate earum laboriosam numquam maxime et consectetur, dolore qui culpa porro obcaecati. Soluta aspernatur vitae provident placeat?</p>
+<p class='extra-content'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto possimus iste a dolor, porro repellendus magnam quos, quibusdam dicta rerum illo pariatur atque sit totam. Consectetur recusandae culpa eum rem.</p>
+<button class='show-more-button visible'>Show More</button>
+<button class='show-less-button'>Show Less</button>
+</div>
+</section> */
+// JS
+let extraContent = document.querySelector('.extra-content');
+
+let showMoreButton = document.querySelector('.show-more-button');
+
+let showLessButton = document.querySelector('.show-less-button');
+
+showMoreButton.addEventListener('click', function(event){
+  // Reveal the extra content
+  extraContent.classList.add('visible');
+  // Hide `Show More` button
+  event.target.classList.remove('visible');
+  // Show `Show Less` button
+  showLessButton.classList.add('visible');
+});
+
+showLessButton.addEventListener('click', function(){
+  // Hide the extra content
+  extraContent.classList.remove('visible');
+  // Hide `Show Less` button
+  event.target.classList.remove('visible');
+  // Show `Show More` button
+  showMoreButton.classList.add('visible');
+});
+
+// There are also custom properties in the event object that you can use, depending on the type of event it is. For example, all keyboard-specific events have a key property that indicates which key was pressed. Let's say that you wanted to hide a form when the user presses the Escape key. The code could look like this:
+
+// -- HTML --
+/* <form id='survey_form'>
+  <label for='question_1'>What is your favorite food?</label>
+  <input id='question_1' type='text'>
+
+  <button>Submit</button>
+</form> */
+
+// -- CSS --
+// .hidden {
+//   display: none;
+// }
+
+// -- JAVASCRIPT --
+window.addEventListener('keydown', function(event){
+  let survey_form = document.querySelector('#survey_form');
+  let isFormHidden = survey_form.classList.contains('hidden');
+  if( !isFormHidden && event.key === 'Escape'){
+    survey_form.classList.add('hidden');
+  }
+});
+
+
+// ================================
+// Preventing Default Event Behavior
+// ================================
+//The event object has the fittingly named event.preventDefault() function for just this purpose. If you call this function inside an event handler for the submit event, the form won’t be sent:
+
+let form = document.querySelector('form');
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  // Do something manually; for example, add custom validations
+});
+
+
+// ================================
+// Manually Triggering Events
+// ================================
+// You can also manually trigger events on elements. The following methods are available on all elements:
+
+element.focus(); // Focus on this element. Mainly useful for <input> or <textarea>
+element.click(); // Click on this element
+element.blur(); // Remove focus from this element
+form.submit(); // Manually submits the form (in case form refers to a form element)
+
+let form = document.querySelector('form');
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  // Do something manually, for example, add custom validations
+  form.submit();
+});
+
+
+// ================================
+// Events and Accessibility
+// ================================

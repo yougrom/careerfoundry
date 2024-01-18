@@ -1,4 +1,4 @@
-* { 
+/* * {
     padding: 0;
     margin: 0;
 }
@@ -7,7 +7,8 @@ body {
     background-color: white;
 }
 
-.container-gen, .container {
+.container-gen,
+.container {
     border: 2px blue solid;
     height: 50px;
     margin-bottom: 10px;
@@ -16,3 +17,60 @@ body {
 .selected {
     border: 5px red solid;
 }
+
+/* ================================ 
+div {
+    background-color: lightblue;
+}
+
+button {
+    margin: 30px;
+    height: 30px;
+    width: 100px;
+}
+
+.button--red {
+    background-color: tomato;
+}
+
+.button--green {
+    background-color: lightgreen;
+}*/
+
+/* .hidden {
+    display: none;
+ } */ 
+/* 
+ body {
+    text-align: center;
+  }
+  div {
+    background-color: lightblue;
+  }
+  button {
+    margin: 30px;
+    height: 30px;
+    width: 100px;
+  }
+  .button--red { background-color: tomato; }
+  .button--green { background-color: lightgreen; } */
+
+  /* .extra-content,
+button{
+  display: none;
+}
+
+.visible{
+  display: block;
+}
+
+.hidden {
+    display: none;
+  } */
+
+  .additional-information {
+    display: none;
+  }
+  .additional-information.is-visible {
+    display: block;
+  }
