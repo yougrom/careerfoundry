@@ -82,6 +82,8 @@ setTimeout(function () {
 // Promises
 // Promises offer a cleaner way of writing asynchronous code. The promise is what holds that code that needs to be executed asynchronously.
 
+let 
+
 // Example of a Promise
 console.log('some piece of code');
 examplePromise.then(function(result){
