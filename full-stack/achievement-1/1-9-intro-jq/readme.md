@@ -40,8 +40,52 @@
 
 
 #### MINI-TUTORIAL: SELECTING A LIST ELEMENT
+
 — Select an element by its ID with jQuery:
 — Let’s say you have an ordered item list in the HTML with an ID `<ol id="list"></ol>`. 
     — To select it in jQuery you can do so with $('#list'), where the # is for the ID. 
     — If it’s a class (<ol class="list"></ol>) then you can do $('.list') with a dot.
+    — You can assign the selected list to a variable (say “list”) using let list = $('#list'). 
+    — To append something to this list, such as an li element, you can write: $('#list').append(<li>list something</li>);. 
+    — If you want to use the variable “list” you created earlier, you can write: list.append("<li>list something</li>");
+    — You can store each <li> element in a variable as well using let li = $('<li></li>');. Now you can append the li variable to the “list” variable like list.append(li);.
+
+    $('input').addClass('red');
+    // Below, only make the .main-button green
+    $('.main-button').addClass('green');
+    // Below, make the text of all buttons yellow
+    $('button').addClass('text--yellow');
+
+## DOM Traversal
+
+— Just like with regular JavaScript, you can traverse between DOM elements using jQuery, though you’ll probably find it a bit easier. Every function below will return a jQuery collection:
+
+    let input = $('input');
+    input.parent(); // Get the parent element
+    input.children(); // Get all children
+    input.closest('.container'); // Go up the hierarchy of parents until the selector matches
+    input.siblings(); // Get all siblings
+
+#### MINI-TUTORIAL: GETTING INPUT VALUES
+
+— To get the input values from the index page, we can use val()
+    —  For example:
+    <input type="text" name="ListItem" id="input"/>
+
+    — then we can get the value of the input with jQuery like this:
+    `$('#input').val();``
+
+    — to store the value into a variable you can use
+    let inputValue = $('#input').val();.
+
+    — Now, you can append this value into another element such as the li from the previous mini-tutorial using
+    li.append(inputValue);.
+    
+    — On the jQuery website you can find a full list of functions for traversing the DOM. - https://api.jquery.com/category/traversing/
+
+## DOM Manipulation
+
+— jQuery is built around the idea of chaining. In other words, you can run multiple commands in a row on the same element:
+
+    $('.notification').addClass('bright-red').delay(300).removeClass('bright-red')
 
